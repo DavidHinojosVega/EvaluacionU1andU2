@@ -19,6 +19,7 @@ Route::resource('/',DashboardController::class);
 Route::get('/users',[UsersController::class,'getUsers']);
 Route::post('/users', [UsersController::class, 'createUsers']);
 Route::get('/devices',[DevicesController::class,'getDevices']);
+Route::post('/devices',[DevicesController::class,'createDevices']);
 });
 
 Auth::routes();
