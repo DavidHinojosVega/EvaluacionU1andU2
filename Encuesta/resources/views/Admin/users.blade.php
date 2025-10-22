@@ -1,9 +1,12 @@
 @extends('admin.layouts.main')
 @section('content')
+<div class="main-content-container container-fluid px-4 mt-4">
+
+
 <div class="d-flex justify-content-between">
-  <h1>Usuarios</h1>
+  <h1 class="text-white">Usuarios</h1>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
   Agregar
 </button></div>
 
@@ -21,7 +24,7 @@
   {{session('success')}}
 </div>
 @endif
-<table class="table">
+<table class="table mt-4">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -83,7 +86,7 @@
           <div class="form-group">
             <label for="role">role</label>
             <select class="form-select" aria-label="Default select example" name="role">
-  <option selected>Open this select menu</option>
+  <option selected>Selecciona un rol</option>
   <option value="Admin">Admin</option>
   <option value="Empleado">Empleado</option>
 </select>
@@ -112,6 +115,7 @@
 </div>
 
 
+</div>
 
 @endsection
 

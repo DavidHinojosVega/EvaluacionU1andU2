@@ -1,7 +1,15 @@
 @extends('admin.layouts.main')
 @section('content')
+
+<div class="main-content-container container-fluid px-4 mt-4">
+
 <div class="d-flex justify-content-between">
-  <h1>Usuarios</h1>
+  <h1 class="text-white">Asignación de dispositivos</h1>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
+  Agregar
+</button>
+</div>
 
 @if($errors->any())
 <div class="alert alert-danger mt-2">
@@ -17,17 +25,17 @@
   {{session('success')}}
 </div>
 @endif
-<table class="table">
+
+
+<table class="table mt-4 text-white">
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Email</th>
-      <th scope="col">Role</th>
-      <th scope="col">Dni</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Telefono</th>
-      <th scope="col">Estado</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Dispositivo</th>
+      <th scope="col">Fecha de regreso</th>
+      <th scope="col">Fecha asignada</th>
+      <th scope="col">Estatus</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -39,6 +47,57 @@
 
 
 
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Asignar Dispositivo a Empleado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="/dashboard/assigment" method="POST">
+        @csrf
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="userId">Empleado o Usuario</label>
+
+          </div>
+          <div class="form-group">
+            <label for="deviceId">Dispositivo</label>
+           </div>
+          <div class="form-group">
+            <label for="brand">Fecha de entrega del dispositivo</label>
+            <input value="{{old('')}}" type="date" class="form-control" id="purchaseDate" name="purchaseDate" aria-describedby="name">
+          </div>
+          <div class="form-group">
+            <label for="model">Fecha en que debe regresar el dispositivo</label>
+            <input value="{{old('purchaseDate')}}" type="date" class="form-control" id="purchaseDate" name="purchaseDate" aria-describedby="name">
+          </div>
+          
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
 @endsection
 
 @section('scripts')

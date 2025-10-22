@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Assigment;
+use App\Models\User;
+use App\Models\Device;
 
 use Illuminate\Http\Request;
 
@@ -13,8 +15,13 @@ class AssigmentController extends Controller
     public function getAssigment(){
         //SELECT * FROM USERS
         $data = Assigment:: all();
+        $users = User:: all();
+        $devices = Device:: all();
        // dd($data);
-       return view("admin.assigment")->with('assigment',$data);
+       return view("admin.assigment")
+       ->with('assigment',$data)
+       ->with('users',$users)
+       ->with('devices',$devices);
     }
 
 }

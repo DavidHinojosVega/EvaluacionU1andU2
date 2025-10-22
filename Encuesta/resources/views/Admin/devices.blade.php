@@ -1,9 +1,11 @@
 @extends('admin.layouts.main')
 @section('content')
+<div class="main-content-container container-fluid px-4 mt-4">
+
 <div class="d-flex justify-content-between">
-  <h1>Dispositivos</h1>
+  <h1 class="text-white">Dispositivos</h1>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
   Agregar
 </button></div>
 
@@ -21,7 +23,7 @@
   {{session('success')}}
 </div>
 @endif
-<table class="table">
+<table class="table mt-4 text-white">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -57,7 +59,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar usuario</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Agregar dispositivo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -102,7 +104,7 @@
 </div>
 
 
-
+</div>
 @endsection
 
 @section('scripts')

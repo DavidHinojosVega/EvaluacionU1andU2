@@ -7,7 +7,7 @@
                 <div class="d-table m-auto">
                   
                            
-                  <span class="d-none d-md-inline ml-1">DeviceManager Pro</span>
+                  <span class="d-none d-md-inline ml-1"> DeviceManager Pro</span>
                 </div>
               </a>
               <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
