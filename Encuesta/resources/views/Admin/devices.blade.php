@@ -71,10 +71,13 @@
             <label for="serialNumber">Numero Serial</label>
             <input value="{{old('serialNumber')}}" type="text" class="form-control" id="serialNumber" name="serialNumber" aria-describedby="serialNumber">
           </div>
-          <div class="form-group">
-            <label for="deviceType">Tipo de dispositivo</label>
-            <input value="{{old('deviceType')}}" type="text" class="form-control" id="deviceType" name="deviceType" aria-describedby="deviceType">
-</div>
+
+        <select class="form-select" aria-label="Default select example" name="deviceType">
+        <option selected>Tipo de dispositivo</option>
+        <option value="Celular">Celular</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Tableta">Laptop</option>
+        </select>
           <div class="form-group">
             <label for="brand">Marca</label>
             <input value="{{old('brand')}}" type="text" class="form-control" id="brand" name="brand" aria-describedby="brand">
