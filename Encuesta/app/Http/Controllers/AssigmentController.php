@@ -23,5 +23,8 @@ class AssigmentController extends Controller
        ->with('users',$users)
        ->with('devices',$devices);
     }
+    public function createAssigment(){
+        
+    }
 
 }

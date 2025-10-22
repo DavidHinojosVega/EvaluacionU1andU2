@@ -63,18 +63,29 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="userId">Empleado o Usuario</label>
-
+            <select class="form-select" aria-label="Default select example" name="userId">
+  @foreach ($users as $user)
+  <option value="{{$user->id}}">{{$user->name}}</option>
+@endforeach
+</select>
           </div>
           <div class="form-group">
             <label for="deviceId">Dispositivo</label>
+             <select class="form-select" aria-label="Default select example" name="deviceId">
+  @foreach ($devices as $device)
+  @if($device->status=='Disponible')
+  <option value="{{$device->id}}">{{$device->model}}</option>
+  @endif
+@endforeach
+</select>
            </div>
           <div class="form-group">
             <label for="brand">Fecha de entrega del dispositivo</label>
-            <input value="{{old('')}}" type="date" class="form-control" id="purchaseDate" name="purchaseDate" aria-describedby="name">
+            <input value="{{old('assignedDate')}}" type="date" class="form-control" id="assignedDate" name="assignedDate" aria-describedby="name">
           </div>
           <div class="form-group">
             <label for="model">Fecha en que debe regresar el dispositivo</label>
-            <input value="{{old('purchaseDate')}}" type="date" class="form-control" id="purchaseDate" name="purchaseDate" aria-describedby="name">
+            <input value="{{old('returnDate')}}" type="date" class="form-control" id="returnDate" name="returnDate" aria-describedby="name">
           </div>
           
 
