@@ -23,13 +23,38 @@ class AssigmentController extends Controller
        ->with('users',$users)
        ->with('devices',$devices);
     }
-    public function createAssigment(){
+    public function createAssigment(Request $request){
         
 
-    $deviceId = $request->input('device_id');
-    $device = Device::find($deviceId);
-    $device->status = 'En uso';
-    $device->save();
+    
+    
+
+     $request->validate([
+        "userId"=>'required',
+        "deviceId"=>'required',
+        "returnDate"=>'required',
+        "assignedDate"=>'required',
+       ]);
+       //GUARDAR REGISTRO
+       $user = new Assigment();
+       $assigment->userId=$request->userId;
+       $assigment->deviceId=$request->deviceId;
+       $assigment->returnDate=$request->returnDate;
+       $assigment->assignedDate=$request->assignedDate;
+       $assigment->status='Activo';
+       
+       $assigment->save();
+       $deviceId = $request-> deviceId;
+       $device = Device::find($deviceId);
+       $device->status = 'En uso';
+       $device->save();
+
+       return redirect()
+            ->back()
+            ->with('success','Registro insertado correctamente.');
+    
+
+       
     }
 
 }
