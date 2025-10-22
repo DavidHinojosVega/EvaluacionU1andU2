@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
     {//aqui se manda a llamar es la ruta para llegar a los seeders
         $this->call(UsersSeeder::class);
         $this->call(DevicesSeeder::class);
+        $this->call(AssigmentSeeder::class);
     }
 }

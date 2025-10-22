@@ -14,12 +14,14 @@ Route::get('/', function () {
 
 
 
+
 Route::group(['prefix'=>'dashboard'],function(){
 Route::resource('/',DashboardController::class);
 Route::get('/users',[UsersController::class,'getUsers']);
 Route::post('/users', [UsersController::class, 'createUsers']);
 Route::get('/devices',[DevicesController::class,'getDevices']);
 Route::post('/devices',[DevicesController::class,'createDevices']);
+Route::get('/assigment',[AssigmentController::class,'getAssigment']);
 });
 
 Auth::routes();

@@ -6,15 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Assigment extends Model
 {
-    protected $table = "assigments";
+    protected $table = "assignments";
     protected $fillable =[
-        'name',
-        'email',
-        'password',
-        'role',
-        'dni',
-        'address',
-        'phone',
-        'status'
+        'userId',
+        'deviceId',
+        'returnDate',
+        'assignedDate',
+        'status',
     ];
 }
