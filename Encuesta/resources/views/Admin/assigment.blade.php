@@ -31,8 +31,8 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Usuario</th>
-      <th scope="col">Dispositivo</th>
+      <th scope="col">ID de Usuario</th>
+      <th scope="col">ID de Dispositivo</th>
       <th scope="col">Fecha de regreso</th>
       <th scope="col">Fecha asignada</th>
       <th scope="col">Estatus</th>
@@ -40,7 +40,20 @@
     </tr>
   </thead>
   <tbody class="table-group-divider">
-   
+        @foreach ($assigment as $item)
+   <tr>
+      <th scope="row">{{$item->id}}</th>
+      <td>{{$item->userId}}</td>
+      <td>{{$item->deviceId}}</td>
+      <td>{{$item->returnDate}}</td>
+      <td>{{$item->assignedDate}}</td>
+      <td>{{$item->status}}</td>
+      <td>
+        <a href="{{ route('carta.generar', $item->id) }}" class="btn btn-warning btn-sm" target="_blank">
+         Carta Poder </a>
+                        </td>
+    </tr>
+    @endforeach
   </tbody>
 </table>
 

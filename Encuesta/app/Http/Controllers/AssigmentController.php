@@ -37,7 +37,7 @@ class AssigmentController extends Controller
        $assigment->deviceId=$request->deviceId;
        $assigment->returnDate=$request->returnDate;
        $assigment->assignedDate=$request->assignedDate;
-       $assigment->status='Activo';
+       $assigment->status='En uso';
        
        $assigment->save();
        $deviceId = $request-> deviceId;

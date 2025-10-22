@@ -14,4 +14,16 @@ class Assigment extends Model
         'assignedDate',
         'status',
     ];
+
+     public function user()
+    {
+        return $this->belongsTo(User::class, 'userId');
+    }
+ 
+    public function device()
+    {
+        return $this->belongsTo(Device::class, 'deviceId');
+    }
+ 
+
 }
