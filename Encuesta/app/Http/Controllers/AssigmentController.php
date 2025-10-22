@@ -24,11 +24,7 @@ class AssigmentController extends Controller
        ->with('devices',$devices);
     }
     public function createAssigment(Request $request){
-        
-
     
-    
-
      $request->validate([
         "userId"=>'required',
         "deviceId"=>'required',
@@ -36,7 +32,7 @@ class AssigmentController extends Controller
         "assignedDate"=>'required',
        ]);
        //GUARDAR REGISTRO
-       $user = new Assigment();
+       $assigment = new Assigment();
        $assigment->userId=$request->userId;
        $assigment->deviceId=$request->deviceId;
        $assigment->returnDate=$request->returnDate;
