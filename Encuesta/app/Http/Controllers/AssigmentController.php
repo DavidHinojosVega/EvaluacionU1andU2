@@ -25,6 +25,11 @@ class AssigmentController extends Controller
     }
     public function createAssigment(){
         
+
+    $deviceId = $request->input('device_id');
+    $device = Device::find($deviceId);
+    $device->status = 'En uso';
+    $device->save();
     }
 
 }

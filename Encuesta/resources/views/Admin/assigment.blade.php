@@ -36,6 +36,7 @@
       <th scope="col">Fecha de regreso</th>
       <th scope="col">Fecha asignada</th>
       <th scope="col">Estatus</th>
+      <th scope="col">Carta</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">

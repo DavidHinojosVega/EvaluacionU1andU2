@@ -22,7 +22,7 @@ Route::post('/users', [UsersController::class, 'createUsers']);
 Route::get('/devices',[DevicesController::class,'getDevices']);
 Route::post('/devices',[DevicesController::class,'createDevices']);
 Route::get('/assigment',[AssigmentController::class,'getAssigment']);
-Route::post('/assigment',[AssigmentController::class,'creatAssigment']);
+Route::post('/assigment',[AssigmentController::class,'createAssigment']);
 });
 
 Auth::routes();
